@@ -1,5 +1,17 @@
 {
+  "name": "es6",
+  "version": "1.0.0",
+  "main": "Async.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
-    "express": "^4.18.2"
+    "axios": "^1.5.1",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
   }
 }

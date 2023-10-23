@@ -1,17 +1,26 @@
+// const getMoviesAsync = async () => {
+//   const proxy = 'http://127.0.0.1:8080'
+//   const url = 'https://yts.am/api/v2/list_movies.json';
+
+//   const response = await fetch(proxy + url);
+//   console.log(response);
+// };
+
+// getMoviesAsync();
 const getMoviesAsync = async () => {
-  // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  //   const proxyUrl = 'https://aqueous-taiga-78810.herokuapp.com/';
-  const url = 'https://yts.am/api/v2/list_movies.json';
-  const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  const response = await fetch(url, { headers });
-  console.log(response);
-  // const response = await fetch('https://yts.am/api/v2/list_movies.json');
-  // const json = await response.json();
-  // return json.data.movies;
+  try {
+    const response = await fetch('/getMovies'); // Make a request to your Express.js endpoint
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 getMoviesAsync();
+
+
+// getMoviesAsync()
 
 // const getMoviesAsync = async () => {
 //   const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
