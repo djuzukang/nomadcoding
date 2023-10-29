@@ -68,6 +68,19 @@ app.get('/getMovies', async (req, res) => {
   }
 });
 
+app.get('/suggestMovies', async (req, res) => {
+  try {
+    const url = 'https://yts.mx/api/v2/movie_suggestions.json?movie_id=100';
+    const response = await axios(url);
+    const data = response.data;
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
